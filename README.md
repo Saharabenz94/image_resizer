@@ -67,9 +67,10 @@ image_resizer/
 
 ## Getting Started
 
-1. Download or clone the repository
-2. Open `index.html` in a modern web browser
-3. Start processing your images!
+1. **Live Demo**: Visit [https://saharabenz94.github.io/image_resizer/](https://saharabenz94.github.io/image_resizer/)
+2. **Local Development**: Download or clone the repository
+3. **Local Testing**: Open `index.html` in a modern web browser
+4. Start processing your images!
 
 ## Background Removal Algorithm
 
