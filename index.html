@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer & Background Remover</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-image"></i> Image Resizer & Background Remover</h1>
+            <p>Resize images and remove backgrounds with ease</p>
+        </header>
+
+        <div class="main-content">
+            <div class="upload-section">
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Drop your image here</h3>
+                    <p>or click to browse</p>
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                </div>
+            </div>
+
+            <div class="controls-section" id="controlsSection" style="display: none;">
+                <div class="control-group">
+                    <h3>Image Controls</h3>
+                    <div class="control-row">
+                        <label for="widthInput">Width:</label>
+                        <input type="number" id="widthInput" placeholder="Width in pixels">
+                        <button id="maintainAspectRatio" class="btn btn-secondary">
+                            <i class="fas fa-link"></i> Maintain Ratio
+                        </button>
+                    </div>
+                    <div class="control-row">
+                        <label for="heightInput">Height:</label>
+                        <input type="number" id="heightInput" placeholder="Height in pixels">
+                    </div>
+                    <div class="control-row">
+                        <label for="qualityInput">Quality:</label>
+                        <input type="range" id="qualityInput" min="1" max="100" value="90">
+                        <span id="qualityValue">90%</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>Background Removal</h3>
+                    <div class="control-row">
+                        <button id="removeBackground" class="btn btn-primary">
+                            <i class="fas fa-cut"></i> Remove Background
+                        </button>
+                        <button id="restoreBackground" class="btn btn-secondary" style="display: none;">
+                            <i class="fas fa-undo"></i> Restore Background
+                        </button>
+                    </div>
+                    <div class="control-row">
+                        <label for="toleranceInput">Tolerance:</label>
+                        <input type="range" id="toleranceInput" min="1" max="100" value="30">
+                        <span id="toleranceValue">30</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h3>Actions</h3>
+                    <div class="control-row">
+                        <button id="downloadBtn" class="btn btn-success">
+                            <i class="fas fa-download"></i> Download Image
+                        </button>
+                        <button id="resetBtn" class="btn btn-danger">
+                            <i class="fas fa-refresh"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <div class="preview-container">
+                    <h3>Preview</h3>
+                    <div class="image-container">
+                        <canvas id="previewCanvas"></canvas>
+                    </div>
+                    <div class="image-info">
+                        <p>Original: <span id="originalSize">-</span></p>
+                        <p>Current: <span id="currentSize">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+            <div class="loading-content">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Processing image...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
